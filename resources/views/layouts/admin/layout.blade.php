@@ -39,12 +39,12 @@
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Foodistan!</span></a>
             </div>
 
-            @include('front.layout.admin.sidebar')
+            @include('layouts.admin.sidebar')
           </div>
         </div>
 
         <!-- top navigation -->
-          @include('front.layout.admin.header')
+          @include('layouts.admin.header')
         <!-- /top navigation -->
 
         <!-- page content -->
@@ -53,7 +53,7 @@
 
         <!-- footer content -->
         <footer>
-          @include('front/layout.admin.footer')
+          @include('layouts.admin.footer')
         <!-- /footer content -->
       </div>
     </div>

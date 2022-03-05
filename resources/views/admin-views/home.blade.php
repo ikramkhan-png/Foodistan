@@ -1,4 +1,4 @@
-@extends('front.layout.admin.layout')
+@extends('layouts.admin.layout')
 @section('content')
   
       <!-- top tiles -->

@@ -834,70 +834,59 @@
                                             ></a
                                         >
                                     </li>
-                                    
-                                    <li class="nav-item dropdown user-menu">
-                                      <a
-                                          href="#"
-                                          class="nav-link dropdown-toggle"
-                                          data-toggle="dropdown"
-                                      >
-                                          <img
-                                              src="assets/images/user01.jpg"
-                                              style="width: 30px; height: 30px; border-radius: 50%;"
-                                              class="user-image img-circle elevation-2"
-                                              alt=""
-                                          />
-
-                                          <span
-                                              class="d-none d-md-inline"
-                                              >User Name</span
-                                          >
-                                      </a>
-                                      <ul
-                                          class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
-                                          
-                                      >
-                                          <!-- User image -->
-                                          <li class="user-header m-2">
-                                            <div class="text-center">
-                                              <img style="width: 70px; height: 70px; border-radius: 50%;"
-                                                  src="assets/images/user01.jpg"
-                                                  alt="User Image"
-                                              />
-                                              
-                                            </div>
-                                            <div>
-                                              <p>
-                                                  User Name
-                                                  <small
-                                                      >Member since
-                                                      jan,2022</small
-                                                  >
-                                              </p>
-                                                <a href="{{route('sellerHome')}}">Login as a Seller!</a>
-                                              </div>
-                                          </li>
-                                          <!-- Menu Footer-->
-                                          <li class="user-footer mt-5 m-2">  
-                                            <div class="text-right">
-                                                <a
-                                                style="padding: 5px;"
-                                                href="#"
-                                                class="btn btn-danger  float-right"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                                    >
-                                                        Sign out
+                                    <li>
+                                      <ul class="navbar-nav ml-auto">
+                                        <!-- Authentication Links -->
+                                        @guest
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            </li>
+                                            @if (Route::has('register'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                </li>
+                                            @endif
+                                        @else
+                                            <li class="nav-item dropdown">
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    {{ Auth::user()->name }}
                                                 </a>
-                                                    <form
-                                                        id="logout-form"
-                                                        action=""
-                                                        method="POST"
-                                                        class="d-none"
-                                                    >
+                                                
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                    <div class="dropdown-item">
+                                                        <div class="text-center">
+                                                            <img style="width: 70px; height: 70px; border-radius: 50%;"
+                                                                src="assets/images/user02.png"
+                                                                alt="User Image"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <p>
+                                                                {{ Auth::user()->name }}
+                                                                <small
+                                                                    >Member since
+                                                                    jan,2022</small
+                                                                >
+                                                            </p>
+                                                                <a href="{{route('sellerHome')}}">Login as a Seller!</a>
+                                                        </div>
+                                                        <div>
+                                                            <a href="#">Profile</a>
+                                                        </div>
+                                                    </div>
+                                                    <a class="dropdown-item" 
+                                                    onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">
+                                                        {{ __('Logout') }}
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
+                                                        @csrf
                                                     </form>
-                                            </div>     
-                                          </li>
-                                      </ul>
+                                                </div>
+                                            </li>
+                                        @endguest
+                                    </ul>
                                   </li>
                                 </ul>
                                 <div class="pr_search_icon">

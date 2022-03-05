@@ -5,6 +5,7 @@
                         <div class="col-12">
                             <div class="heading_tab_header">
                                 <div class="heading_s2">
+                                    
                                     <h2>EXCLUSIVE GROCERY PRODUCTS</h2>
                                 </div>
                                 <div class="tab-style2">
@@ -31,7 +32,7 @@
                                                 role="tab"
                                                 aria-controls="arrival"
                                                 aria-selected="true"
-                                                >New Arrival</a
+                                                >imdsnn</a
                                             >
                                         </li>
                                         <li class="nav-item">
