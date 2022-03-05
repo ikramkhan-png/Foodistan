@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Base;
 use App\Product;
 use Illuminate\Http\Request;
+
 class BaseController extends Controller
 {
     /**
@@ -14,15 +16,12 @@ class BaseController extends Controller
     public function index()
     {
         $products = Product::get();
-        dd($products);
         $new_products = Product::latest()->take(6)->get();
         return view('front.home',compact('products','new_products'));
-        
     }
     public function productView()
     {
         return view('front.productView');
-        
     }
     public function cart()
     {
